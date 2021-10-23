@@ -1,0 +1,84 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        </script>
+        <title>
+            Results Broken Wiki
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+        </script>
+    </head>
+
+    <body>
+        <div class="jumbotron text-center">
+            <h1>
+                Broken Wiki
+            </h1>
+
+            <br>
+            <br>
+
+<!-- Search form -->
+            <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <br>
+            <button type="button" class="btn btn-secondary"> Enter </button>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <canvas id="myChart" style="width:100%;max-width:600px">
+            </canvas>
+        
+            <script>
+                var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+                var yValues = [55, 49, 44, 24, 15];
+                var barColors = [
+                    "#b91d47",
+                    "#00aba9",
+                    "#2b5797",
+                    "#e8c3b9",
+                    "#1e7145"
+                ];
+        
+                new Chart("myChart", {
+                    type: "pie",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: "World Wide Wine Production 2018"
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+
+    </body>
+    
+    <script>
+        fetch("http://127.0.0.1:5000/editcount")
+        .then( (x) => x.json())
+        .then((data) => console.log(data))
+    </script>
+</html>
