@@ -34,14 +34,17 @@
 
          <!-- Search form -->
          <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
-             <input class="form-control" id="inputurl" type="text" placeholder="Search" aria-label="Search">
-             <br>
-             <button type="button" id="enter" class="btn btn-secondary"> Enter </button>
+             <form action="results.html" method="get">
+                 <input class="form-control" id="inputurl" type="text" name="q" placeholder="Search Wikipedia page"
+                     aria-label="Search">
+                 <br>
+                 <button type="submit" id="enter" class="btn btn-secondary"> Enter </button>
+             </form>
 
          </div>
-         <div  id="spinner" class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
+         <div id="spinner" class="spinner-border" role="status">
+             <span class="sr-only">Loading...</span>
+         </div>
      </div>
      <div class="container">
          <div class="row">
@@ -53,18 +56,6 @@
  </body>
 
  <script>
-     document.getElementById("enter").addEventListener("click", search);
-
-     function search() {
-         let inputurl = document.getElementById('inputurl').value;
-         window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
-     }
-
-     function search() {
-         let inputurl = document.getElementById('inputurl').value;
-         window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
-     }
-
      function getUrlParam(name) {
          var url_string = window.location;
          var url = new URL(url_string);
@@ -104,7 +95,7 @@
                      }
                  }
              });
-            document.getElementById ("spinner").remove()
+             document.getElementById("spinner").remove()
          })
 
      function getColors(num) {

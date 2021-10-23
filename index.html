@@ -22,9 +22,11 @@
      <br>
      <!-- Search form -->
      <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
-       <input class="form-control" id="inputurl" type="text" placeholder="Search Wikipedia page" aria-label="Search">
+      <form action="results.html" method="get"> 
+      <input class="form-control" id="inputurl" type="text" name="q" placeholder="Search Wikipedia page" aria-label="Search">
        <br>
-       <button type="button" id="enter" class="btn btn-secondary"> Enter </button>
+       <button type="submit" id="enter" class="btn btn-secondary"> Enter </button>
+      </form>
      </div>
    </div>
 
@@ -68,13 +70,4 @@
        <br><br><br><br><br><br><br><br><br><br><br></h5>
    </div>
  </body>
- <script>
-   document.getElementById("enter").addEventListener("click", search);
-
-   function search() {
-     let inputurl = document.getElementById('inputurl').value;
-     window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
-   }
- </script>
-
  </html>
