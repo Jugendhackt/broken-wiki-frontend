@@ -21,13 +21,13 @@
 
  <body>
      <div class="jumbotron text-center">
-        <a href="/index.html" class= "text-decoration-none text-reset" >
-            <h1>Broken Wiki</h1>
-        </a>
-        <h1>
+         <a href="/index.html" class="text-decoration-none text-reset">
+             <h1>Broken Wiki</h1>
+         </a>
+         <h1>
              for: <span id="outputname"> </span>
-        </h1>
-        
+         </h1>
+
 
          <br>
          <br>
@@ -50,7 +50,29 @@
  </body>
 
  <script>
-     fetch("http://127.0.0.1:5000/editcount")
+     document.getElementById("enter").addEventListener("click", search);
+
+     function search() {
+         let inputurl = document.getElementById('inputurl').value;
+         window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
+     }
+
+     function search() {
+         let inputurl = document.getElementById('inputurl').value;
+         window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
+     }
+
+     function getUrlParam(name) {
+         var url_string = window.location;
+         var url = new URL(url_string);
+         var c = url.searchParams.get(name);
+         return c;
+     }
+
+     let urlParam = getUrlParam("q");
+     document.getElementById("outputname").innerText = urlParam;
+
+     fetch("http://127.0.0.1:5000/editcount?q=" + urlParam)
          .then((x) => x.json())
          .then((data) => {
              console.log(data);
@@ -80,24 +102,6 @@
                  }
              });
          })
-
-     document.getElementById("enter").addEventListener("click", search);
-
-     function search() {
-         let inputurl = document.getElementById('inputurl').value;
-         window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
-     }
-
-     function getUrlParam(name) {
-         var url_string = window.location;
-         var url = new URL(url_string);
-         var c = url.searchParams.get(name);
-         return c;
-     }
-
-     let urlParam = getUrlParam("q");
-     document.getElementById("outputname").innerText = urlParam;
-
 
      function getColors(num) {
          const colors = [
