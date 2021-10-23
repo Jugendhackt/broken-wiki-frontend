@@ -24,7 +24,7 @@
     <body>
         <div class="jumbotron text-center">
             <h1>
-                Broken Wiki
+                Broken Wiki for: <span> id= "" </span>
             </h1>
 
             <br>
@@ -32,9 +32,9 @@
 
 <!-- Search form -->
             <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control" id="inputurl" type="text" placeholder="Search" aria-label="Search">
             <br>
-            <button type="button" class="btn btn-secondary"> Enter </button>
+            <button type="button" id="enter" class="btn btn-secondary"> Enter </button>
             
         </div>
     </div>
@@ -80,5 +80,14 @@
         fetch("http://127.0.0.1:5000/editcount")
         .then( (x) => x.json())
         .then((data) => console.log(data))
+    </script>
+
+    <script>
+        document.getElementById("enter").addEventListener("click", search);
+        
+        function search() {
+    let inputurl = document.getElementById('inputurl').value;
+    window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
+  }
     </script>
 </html>
