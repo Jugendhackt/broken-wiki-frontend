@@ -24,7 +24,7 @@
     <body>
         <div class="jumbotron text-center">
             <h1>
-                Broken Wiki for: <span> id= "" </span>
+                Broken Wiki for: <span id="outputname"> </span>
             </h1>
 
             <br>
@@ -78,16 +78,26 @@
     
     <script>
         fetch("http://127.0.0.1:5000/editcount")
-        .then( (x) => x.json())
-        .then((data) => console.log(data))
-    </script>
-
-    <script>
+            .then( (x) => x.json())
+            .then((data) => console.log(data))
+    
         document.getElementById("enter").addEventListener("click", search);
         
         function search() {
-    let inputurl = document.getElementById('inputurl').value;
-    window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
-  }
+            let inputurl = document.getElementById('inputurl').value;
+            window.location.href = "http://127.0.0.1:5500/results.html?q=" + inputurl;
+        }
+
+        function getUrlParam(name) {
+            var url_string = window.location;
+            var url = new URL(url_string);
+            var c = url.searchParams.get(name);
+            return c;
+        }
+
+        let urlParam = getUrlParam("q");
+        document.getElementById("outputname").innerText = urlParam;
+
+        
     </script>
 </html>
