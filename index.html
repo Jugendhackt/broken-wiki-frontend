@@ -2,6 +2,7 @@
  <html lang="en">
 
  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Broken Wiki</title>
    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
    <meta charset="utf-8">
@@ -10,10 +11,18 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="darkmode.css">
  </head>
 
- <body>
+ <body class=dark-mode>
 
+
+
+   <label id="darkmode-label" for="darkmode">
+     <input type="checkbox" id="darkmode" >
+     <span id="darkmode-span"></span>
+   </label>
+   <br>
    <div class="jumbotron text-center">
      <a href="/index.html" class="text-decoration-none text-reset">
        <h1>Broken Wiki</h1>
@@ -22,11 +31,12 @@
      <br>
      <!-- Search form -->
      <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
-      <form action="results.html" method="get"> 
-      <input class="form-control" id="inputurl" type="text" name="q" placeholder="Search Wikipedia page" aria-label="Search">
-       <br>
-       <button type="submit" id="enter" class="btn btn-secondary"> Enter </button>
-      </form>
+       <form action="results.html" method="get">
+         <input class="form-control" id="inputurl" type="text" name="q" placeholder="Search Wikipedia page"
+           aria-label="Search">
+         <br>
+         <button type="submit" id="enter" class="btn btn-secondary"> Enter </button>
+       </form>
      </div>
    </div>
 
@@ -69,5 +79,9 @@
        Bonbon,Index_HD, Jonathan and Ferdinand.
        <br><br><br><br><br><br><br><br><br><br><br></h5>
    </div>
+
  </body>
+
+ <script src="darkmode.js"></script>
+
  </html>

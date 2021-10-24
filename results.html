@@ -1,6 +1,5 @@
  <!DOCTYPE html>
  <html lang="en">
- </script>
 
  <head>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
@@ -17,9 +16,14 @@
      </script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
      </script>
+     <link rel="stylesheet" href="darkmode.css">
  </head>
 
  <body>
+    <label id="darkmode-label" for="darkmode">
+        <input type="checkbox" id="darkmode" >
+        <span id="darkmode-span"></span>
+      </label>
      <div class="jumbotron text-center">
          <a href="/index.html" class="text-decoration-none text-reset">
              <h1>Broken Wiki</h1>
@@ -1678,5 +1682,5 @@
          return result;
      }
  </script>
-
+<script src="darkmode.js"></script>
  </html>
