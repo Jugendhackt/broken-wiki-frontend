@@ -1,66 +1,87 @@
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Broken Wiki</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+ <!DOCTYPE html>
+ <html lang="en">
 
-<div class="jumbotron text-center">
-  <h1>Broken Wiki</h1>
-  <br>
-  <br>
-  <!-- Search form -->
-    <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
-      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      <br>
-      <button type="button" class="btn btn-secondary"> Enter </button>
-    
-    </div>
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>What is "Broken Wiki?</h3>
-      <p>"Broken Wiki" help you to see if a Wikepedia page is reliable.</p>
-      <p>"Broken Wiki" tracks, from which person it has been edited how many times.
-      <br> 
-     
-    </div>
-    <div class="col-sm-4">
-      <h3>Was ist "Broken Wiki?</h3>
-      <p>"Broken Wiki" hilft dir, zu sehen ob ein Wikepedia-Artikel verlässlich ist.</p>
-      <p>"Broken Wiki untersucht, welche Person es wie oft bearbeitet hat. </p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-  <br>
-  <br>
-  <div class="text-center">
-    <h3><b>Disclaimer</b></h3>
-    <p>This page don't say you to 100% that the Wikepedia page is fake.
-    </p>
-    <br>
-    <p>Diese Seite hat keine 100% Trefferchance, dass der Wikepedia-Artikel manipuliert wurde. </p>
-  </div>
-</div>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Broken Wiki</title>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="darkmode.css">
+ </head>
 
-</body>
-<script>
-  
-</script>
-</html>
+ <body class=dark-mode>
 
-    
+
+
+   <label id="darkmode-label" for="darkmode">
+     <input type="checkbox" id="darkmode" >
+     <span id="darkmode-span"></span>
+   </label>
+   <br>
+   <div class="jumbotron text-center">
+     <a href="/index.html" class="text-decoration-none text-reset">
+       <h1>Broken Wiki</h1>
+     </a>
+     <br>
+     <br>
+     <!-- Search form -->
+     <div class="active-cyan-3 active-cyan-4 mb-4" style="width: 55%;margin: auto;">
+       <form action="results.html" method="get">
+         <input class="form-control" id="inputurl" type="text" name="q" placeholder="Search Wikipedia page"
+           aria-label="Search">
+         <br>
+         <button type="submit" id="enter" class="btn btn-secondary"> Enter </button>
+       </form>
+     </div>
+   </div>
+
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-4">
+         <h3>What is Broken Wiki?</h3>
+         <p>Broken Wiki help you to see if a Wikipedia page is reliable.</p>
+         <p>Broken Wiki tracks, from which person it has been edited how many times.
+           <br>
+
+       </div>
+       <div class="col-sm-4">
+         <h3>Was ist Broken Wiki?</h3>
+         <p>Broken Wiki hilft dir, zu sehen ob ein Wikipedia-Artikel verlässlich ist.</p>
+         <p>Broken Wiki untersucht, welche Person den Artikel wie oft bearbeitet hat. </p>
+       </div>
+       <div class="col-sm-4">
+         <h3>¿Qué es Broken Wiki?</h3>
+         <p>Broken Wiki te ayuda a ver si un artículo de Wikipedia es fiable.</p>
+         <p>Broken Wiki investiga qué persona ha editado el artículo y con qué frecuencia.</p>
+       </div>
+     </div>
+     <br>
+     <br>
+     <div class="text-center">
+       <h3><b>Disclaimer</b></h3>
+       <p>This page doesn't say you to 100% that the Wikipedia article is fake.
+       </p>
+       <br>
+       <p>Diese Seite hat keine 100% Trefferchance, dass der Wikipedia-Artikel manipuliert wurde. </p>
+       <br>
+       <p>Esta página no dice al 100% que la página de Wikipedia ha sido editada. </p>
+     </div>
+   </div>
+   <div class="text-center">
+     <br><br><br><br><br><br><br><br><br>
+     <h5>This page was created by
+       <br>
+       Bonbon,Index_HD, Jonathan and Ferdinand.
+       <br><br><br><br><br><br><br><br><br><br><br></h5>
+   </div>
+
+ </body>
+
+ <script src="darkmode.js"></script>
+
+ </html>
