@@ -1,0 +1,49 @@
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+
+  .dark-mode {
+    background-color: rgb(46, 42, 42);
+    color: white;
+  }
+
+  .topnav-switch {
+    position: fixed;
+    left: 3em;
+    top: 4em
+  }
+
+  .dark-mode .jumbotron {
+    background-color: rgb(82, 79, 79);
+  }
+
+  #darkmode-label {
+    background-color: grey;
+    width: 21px;
+    height: 50px;
+    border-radius: 11px;
+    line-height: 1em;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  #darkmode {
+    display: none;
+  }
+
+  #darkmode-span {
+    height: 16px;
+    width: 16px;
+    background-color: rgb(36, 33, 33);
+    display: inline-block;
+    border-radius: 50%;
+    margin: 2.5px;
+  }
+
+  #darkmode:checked~#darkmode-span {
+    background-color: white;
+    margin-top: 31.5px;
+  }
