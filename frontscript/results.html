@@ -57,6 +57,9 @@
          <div class="row">
              <canvas id="myChart" style="width:100%;">
              </canvas>
+             <br/><br/><br><br/>
+             <canvas id="mysecondChart" style="width:100%;margin-top: 80px;">
+             </canvas>
          </div>
      </div>
 
@@ -111,6 +114,54 @@
                  }
              });
              document.getElementById("spinner").remove()
+         })
+     fetch("http://127.0.0.1:5000/edittime?q=" + urlParam)
+         .then((x) => x.json())
+         .then((data) => {
+
+
+             //code fuer chart.js (kuchendigramm)
+             var xValues = Object.keys(data);
+             var yValues = Object.values(data);
+             
+             /*
+             var xyValues = [];
+
+             for (let i = 0; i < xValues.length; i++) {
+                 xyValues.push({
+                     x: xValues[i],
+                     y: yValues[i]
+                 });
+
+             }
+             */
+
+
+
+
+
+             console.log(xValues)
+
+             console.log(getColors(xValues.length));
+
+
+             new Chart("mysecondChart", {
+                 type: "line",
+                 data: {
+                     labels: xValues,
+                     datasets: [{
+                         backgroundColor: "#384555",
+                         borderColor: "#384555",
+                         data: yValues
+                     }]
+                 },
+                 ptions: {
+                     title: {
+                         display: true,
+                         text: "Edits of the Website by time"
+                     }
+                 }
+             });
          })
 
      function getColors(num) {
